@@ -1,0 +1,759 @@
+/*!***************************************************************************\
+  NES.css Framework
+  Version: development
+build-data()
+\*****************************************************************************/
+/*!
+ * Bootstrap Reboot v4.1.3 (https://getbootstrap.com/)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: inherit;
+}
+
+button {
+  border-radius: 0;
+}
+
+input,
+button {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button {
+  text-transform: none;
+}
+
+button,
+[type=button],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+html,
+body {
+  font-family: "Press Start 2P";
+}
+
+html {
+  cursor: url(get-file-as-data-uri("../assets/cursor.png")), auto;
+}
+
+body {
+  font-size: 16px;
+  color: #212529;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+a,
+button {
+  cursor: url(get-file-as-data-uri("../assets/cursor-click.png")) 14 0, pointer;
+}
+
+button,
+[type=button],
+[type=submit] {
+  -webkit-appearance: none;
+}
+.nes-input, .nes-table.is-dark.is-bordered, .nes-table.is-bordered, .nes-btn, .nes-balloon {
+  border-style: solid;
+  border-width: 4px;
+}
+
+/* https://medium.com/@matuzo/writing-css-with-accessibility-in-mind-8514a0007939 */
+
+.nes-balloon {
+  border-image-slice: 3;
+  border-image-width: 3;
+  border-image-repeat: stretch;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="8" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M3 1 h1 v1 h-1 z M4 1 h1 v1 h-1 z M2 2 h1 v1 h-1 z M5 2 h1 v1 h-1 z M1 3 h1 v1 h-1 z M6 3 h1 v1 h-1 z M1 4 h1 v1 h-1 z M6 4 h1 v1 h-1 z M2 5 h1 v1 h-1 z M5 5 h1 v1 h-1 z M3 6 h1 v1 h-1 z M4 6 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+  border-image-outset: 2;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  margin: 8px;
+  margin-bottom: 30px;
+  background-color: #fff;
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-balloon {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-balloon {
+    border-image-repeat: stretch;
+  }
+}
+.nes-balloon > :last-child {
+  margin-bottom: 0;
+}
+.nes-balloon::before, .nes-balloon::after {
+  position: absolute;
+  content: "";
+}
+@supports (-moz-appearance: meterbar) {
+}
+.nes-balloon.from-right::before, .nes-balloon.from-right::after {
+  right: 2rem;
+}
+.nes-balloon.from-right::before {
+  bottom: -14px;
+  width: 26px;
+  height: 10px;
+  background-color: #fff;
+  border-right: 4px solid #212529;
+  border-left: 4px solid #212529;
+}
+.nes-balloon.from-right::after {
+  bottom: -18px;
+  width: 18px;
+  height: 4px;
+  margin-left: 8px;
+  background-color: #fff;
+  box-shadow: -4px 0, 4px 0, 4px 4px #fff, 0 4px, 8px 4px, 4px 8px, 8px 8px;
+}
+
+.nes-btn {
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+  border-image-outset: 2;
+  position: relative;
+  display: inline-block;
+  padding: 6px 8px;
+  margin: 4px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: url(get-file-as-data-uri("../assets/cursor-click.png")) 14 0, pointer;
+  user-select: none;
+  color: #212529;
+  background-color: #fff;
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-btn {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-btn {
+    border-image-repeat: stretch;
+  }
+}
+.nes-btn::after {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+  content: "";
+  box-shadow: inset -4px -4px #adafbc;
+}
+.nes-btn:hover {
+  color: #212529;
+  text-decoration: none;
+  background-color: #e7e7e7;
+}
+.nes-btn:hover::after {
+  box-shadow: inset -6px -6px #adafbc;
+}
+.nes-btn:focus {
+  box-shadow: 0 0 0 6px rgba(173, 175, 188, 0.3);
+}
+.nes-btn:active:not(.is-disabled)::after {
+  box-shadow: inset 4px 4px #adafbc;
+}
+.nes-btn:focus {
+  outline: 0;
+}
+.nes-btn.is-primary {
+  color: #fff;
+  background-color: #209cee;
+}
+.nes-btn.is-primary::after {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+  content: "";
+  box-shadow: inset -4px -4px #006bb3;
+}
+.nes-btn.is-primary:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #108de0;
+}
+.nes-btn.is-primary:hover::after {
+  box-shadow: inset -6px -6px #006bb3;
+}
+.nes-btn.is-primary:focus {
+  box-shadow: 0 0 0 6px rgba(0, 107, 179, 0.3);
+}
+.nes-btn.is-primary:active:not(.is-disabled)::after {
+  box-shadow: inset 4px 4px #006bb3;
+}
+.nes-btn.is-error {
+  color: #fff;
+  background-color: #e76e55;
+}
+.nes-btn.is-error::after {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+  content: "";
+  box-shadow: inset -4px -4px #8c2022;
+}
+.nes-btn.is-error:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #ce372b;
+}
+.nes-btn.is-error:hover::after {
+  box-shadow: inset -6px -6px #8c2022;
+}
+.nes-btn.is-error:focus {
+  box-shadow: 0 0 0 6px rgba(140, 32, 34, 0.3);
+}
+.nes-btn.is-error:active:not(.is-disabled)::after {
+  box-shadow: inset 4px 4px #8c2022;
+}
+@supports (-moz-appearance: meterbar) {
+}
+@supports (-moz-appearance: meterbar) {
+}
+.nes-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+@supports (-moz-appearance: meterbar) {
+}
+@supports (-moz-appearance: meterbar) {
+}
+@supports (-moz-appearance: meterbar) {
+}
+@supports (-moz-appearance: meterbar) {
+}
+@supports (-moz-appearance: meterbar) {
+}
+@supports (-moz-appearance: meterbar) {
+}
+
+.nes-table-responsive {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.nes-table {
+  table-layout: fixed;
+  background-color: #fff;
+  /***************************************************************************  \
+    This eliminates the gap between the last row in a table and the border, as
+    well as hiding the derelict pixels in the bottom right and bottom left of
+    the last row of a table
+  \  ***************************************************************************/
+}
+.nes-table tr {
+  margin-left: -0.25em;
+}
+.nes-table th,
+.nes-table td {
+  position: relative;
+  padding: 0.5rem;
+  word-wrap: break-word;
+  border-color: #212529;
+  border-style: solid;
+  border-width: 0 0.25em 0.25em 0;
+}
+.nes-table th:last-child,
+.nes-table td:last-child {
+  border-right-width: 0;
+}
+.nes-table th::after, .nes-table th::before, .nes-table td::after, .nes-table td::before {
+  position: absolute;
+  display: block;
+  width: 0.25em;
+  height: 0.25em;
+  content: "";
+  background-color: #212529;
+}
+.nes-table th::after,
+.nes-table td::after {
+  bottom: -0.25em;
+  left: -0.25em;
+}
+.nes-table th::before,
+.nes-table td::before {
+  top: -0.25em;
+  right: -0.25em;
+}
+.nes-table th:last-child::before,
+.nes-table td:last-child::before {
+  top: initial;
+  bottom: -0.25em;
+}
+.nes-table.is-bordered {
+  margin: 4px;
+  border-spacing: 0;
+  border-collapse: separate;
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+  border-image-outset: 2;
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-table.is-bordered {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-table.is-bordered {
+    border-image-repeat: stretch;
+  }
+}
+.nes-table.is-dark {
+  color: #fff;
+  background-color: #212529;
+}
+.nes-table.is-dark::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+}
+.nes-table.is-dark.is-bordered {
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(255,255,255)" /></svg>');
+  border-image-outset: 0;
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-table.is-dark.is-bordered {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-table.is-dark.is-bordered {
+    border-image-repeat: stretch;
+  }
+}
+.nes-table.is-dark th,
+.nes-table.is-dark td {
+  border-color: #fff;
+}
+.nes-table.is-dark th::after, .nes-table.is-dark th::before, .nes-table.is-dark td::after, .nes-table.is-dark td::before {
+  display: none;
+}
+.nes-table tbody tr:last-child td {
+  border-bottom-width: 0;
+}
+.nes-table tbody tr:last-child td:first-child::after, .nes-table tbody tr:last-child td:last-child::before {
+  display: none;
+}
+.nes-text.is-success {
+  color: #92cc41;
+}
+.nes-text.is-error {
+  color: #e76e55;
+}
+
+.nes-input {
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+  border-image-outset: 2;
+  width: calc(100% - 8px);
+  padding: 0.5rem 1rem;
+  margin: 4px;
+  background-clip: padding-box;
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-input {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-input {
+    border-image-repeat: stretch;
+  }
+}
+.nes-input.is-dark {
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(255,255,255)" /></svg>');
+  outline-color: #e7e7e7;
+  color: #fff;
+  background-color: #212529;
+}
+.nes-field .nes-input {
+  display: block;
+}
+.nes-field.is-inline {
+  display: flex;
+  align-items: center;
+}
+.nes-field.is-inline .nes-input {
+  flex-basis: 0;
+  flex-grow: 5;
+}
+
+@media screen and (max-width: 768px) {
+  .nes-field.is-inline {
+    display: block;
+  }
+  .nes-field.is-inline .nes-input {
+    max-width: 100%;
+  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-balloon {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-balloon {
+    border-image-repeat: stretch;
+  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-balloon.is-dark {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-balloon.is-dark {
+    border-image-repeat: stretch;
+  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-btn {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-btn {
+    border-image-repeat: stretch;
+  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-container.is-rounded {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-container.is-rounded {
+    border-image-repeat: stretch;
+  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-container.is-rounded.is-dark {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-container.is-rounded.is-dark {
+    border-image-repeat: stretch;
+  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-dialog.is-rounded {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-dialog.is-rounded {
+    border-image-repeat: stretch;
+  }
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-dialog.is-rounded.is-dark {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-dialog.is-rounded.is-dark {
+    border-image-repeat: stretch;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-list.is-disc li::before {
+    box-shadow: 8px 2px 0 0.020em,10px 2px 0 0.020em,6px 4px 0 0.020em,8px 4px 0 0.020em,10px 4px 0 0.020em,12px 4px 0 0.020em,4px 6px 0 0.020em,6px 6px 0 0.020em,8px 6px 0 0.020em,10px 6px 0 0.020em,12px 6px 0 0.020em,14px 6px 0 0.020em,4px 8px 0 0.020em,6px 8px 0 0.020em,8px 8px 0 0.020em,10px 8px 0 0.020em,12px 8px 0 0.020em,14px 8px 0 0.020em,6px 10px 0 0.020em,8px 10px 0 0.020em,10px 10px 0 0.020em,12px 10px 0 0.020em,8px 12px 0 0.020em,10px 12px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-list.is-circle li::before {
+    box-shadow: 8px 2px 0 0.020em,10px 2px 0 0.020em,6px 4px 0 0.020em,8px 4px 0 0.020em,10px 4px 0 0.020em,12px 4px 0 0.020em,4px 6px 0 0.020em,6px 6px 0 0.020em,12px 6px 0 0.020em,14px 6px 0 0.020em,4px 8px 0 0.020em,6px 8px 0 0.020em,12px 8px 0 0.020em,14px 8px 0 0.020em,6px 10px 0 0.020em,8px 10px 0 0.020em,10px 10px 0 0.020em,12px 10px 0 0.020em,8px 12px 0 0.020em,10px 12px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-progress {
+    border-image-repeat: stretch;
+  }
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-progress.is-rounded {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-progress.is-rounded {
+    border-image-repeat: stretch;
+  }
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-table.is-bordered {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-table.is-bordered {
+    border-image-repeat: stretch;
+  }
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-table.is-dark.is-bordered {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-table.is-dark.is-bordered {
+    border-image-repeat: stretch;
+  }
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .nes-input,
+  .nes-textarea {
+    border-image-repeat: space;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-input,
+  .nes-textarea {
+    border-image-repeat: stretch;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.heart::before {
+    box-shadow: 3px 2px 0 0.020em #444,4px 2px 0 0.020em #444,5px 2px 0 0.020em #444,11px 2px 0 0.020em #444,12px 2px 0 0.020em #444,13px 2px 0 0.020em #444,2px 3px 0 0.020em #444,3px 3px 0 0.020em,4px 3px 0 0.020em,5px 3px 0 0.020em,6px 3px 0 0.020em #444,10px 3px 0 0.020em #444,11px 3px 0 0.020em,12px 3px 0 0.020em,13px 3px 0 0.020em #842300,14px 3px 0 0.020em #444,1px 4px 0 0.020em #444,2px 4px 0 0.020em,3px 4px 0 0.020em #fff,4px 4px 0 0.020em #fff,5px 4px 0 0.020em,6px 4px 0 0.020em,7px 4px 0 0.020em #444,9px 4px 0 0.020em #444,10px 4px 0 0.020em,11px 4px 0 0.020em,12px 4px 0 0.020em,13px 4px 0 0.020em,14px 4px 0 0.020em #842300,15px 4px 0 0.020em #444,1px 5px 0 0.020em #444,2px 5px 0 0.020em,3px 5px 0 0.020em #fff,4px 5px 0 0.020em,5px 5px 0 0.020em,6px 5px 0 0.020em,7px 5px 0 0.020em,8px 5px 0 0.020em #444,9px 5px 0 0.020em,10px 5px 0 0.020em,11px 5px 0 0.020em,12px 5px 0 0.020em,13px 5px 0 0.020em,14px 5px 0 0.020em #842300,15px 5px 0 0.020em #444,1px 6px 0 0.020em #444,2px 6px 0 0.020em,3px 6px 0 0.020em,4px 6px 0 0.020em,5px 6px 0 0.020em,6px 6px 0 0.020em,7px 6px 0 0.020em,8px 6px 0 0.020em,9px 6px 0 0.020em,10px 6px 0 0.020em,11px 6px 0 0.020em,12px 6px 0 0.020em,13px 6px 0 0.020em,14px 6px 0 0.020em #842300,15px 6px 0 0.020em #444,1px 7px 0 0.020em #444,2px 7px 0 0.020em,3px 7px 0 0.020em,4px 7px 0 0.020em,5px 7px 0 0.020em,6px 7px 0 0.020em,7px 7px 0 0.020em,8px 7px 0 0.020em,9px 7px 0 0.020em,10px 7px 0 0.020em,11px 7px 0 0.020em,12px 7px 0 0.020em,13px 7px 0 0.020em,14px 7px 0 0.020em #842300,15px 7px 0 0.020em #444,1px 8px 0 0.020em #444,2px 8px 0 0.020em,3px 8px 0 0.020em,4px 8px 0 0.020em,5px 8px 0 0.020em,6px 8px 0 0.020em,7px 8px 0 0.020em,8px 8px 0 0.020em,9px 8px 0 0.020em,10px 8px 0 0.020em,11px 8px 0 0.020em,12px 8px 0 0.020em,13px 8px 0 0.020em,14px 8px 0 0.020em #842300,15px 8px 0 0.020em #444,2px 9px 0 0.020em #444,3px 9px 0 0.020em,4px 9px 0 0.020em,5px 9px 0 0.020em,6px 9px 0 0.020em,7px 9px 0 0.020em,8px 9px 0 0.020em,9px 9px 0 0.020em,10px 9px 0 0.020em,11px 9px 0 0.020em,12px 9px 0 0.020em,13px 9px 0 0.020em #842300,14px 9px 0 0.020em #444,3px 10px 0 0.020em #444,4px 10px 0 0.020em,5px 10px 0 0.020em,6px 10px 0 0.020em,7px 10px 0 0.020em,8px 10px 0 0.020em,9px 10px 0 0.020em,10px 10px 0 0.020em,11px 10px 0 0.020em,12px 10px 0 0.020em #842300,13px 10px 0 0.020em #444,4px 11px 0 0.020em #444,5px 11px 0 0.020em,6px 11px 0 0.020em,7px 11px 0 0.020em,8px 11px 0 0.020em,9px 11px 0 0.020em,10px 11px 0 0.020em,11px 11px 0 0.020em #842300,12px 11px 0 0.020em #444,5px 12px 0 0.020em #444,6px 12px 0 0.020em,7px 12px 0 0.020em,8px 12px 0 0.020em,9px 12px 0 0.020em,10px 12px 0 0.020em #842300,11px 12px 0 0.020em #444,6px 13px 0 0.020em #444,7px 13px 0 0.020em,8px 13px 0 0.020em,9px 13px 0 0.020em #842300,10px 13px 0 0.020em #444,7px 14px 0 0.020em #444,8px 14px 0 0.020em #842300,9px 14px 0 0.020em #444,8px 15px 0 0.020em #444;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.heart.is-half::before {
+    box-shadow: 3px 2px 0 0.020em #444,4px 2px 0 0.020em #444,5px 2px 0 0.020em #444,11px 2px 0 0.020em #444,12px 2px 0 0.020em #444,13px 2px 0 0.020em #444,2px 3px 0 0.020em #444,3px 3px 0 0.020em,4px 3px 0 0.020em,5px 3px 0 0.020em,6px 3px 0 0.020em #444,10px 3px 0 0.020em #444,14px 3px 0 0.020em #444,1px 4px 0 0.020em #444,2px 4px 0 0.020em,3px 4px 0 0.020em #fff,4px 4px 0 0.020em #fff,5px 4px 0 0.020em,6px 4px 0 0.020em,7px 4px 0 0.020em #444,9px 4px 0 0.020em #444,15px 4px 0 0.020em #444,1px 5px 0 0.020em #444,2px 5px 0 0.020em,3px 5px 0 0.020em #fff,4px 5px 0 0.020em,5px 5px 0 0.020em,6px 5px 0 0.020em,7px 5px 0 0.020em,8px 5px 0 0.020em #444,15px 5px 0 0.020em #444,1px 6px 0 0.020em #444,2px 6px 0 0.020em,3px 6px 0 0.020em,4px 6px 0 0.020em,5px 6px 0 0.020em,6px 6px 0 0.020em,7px 6px 0 0.020em,8px 6px 0 0.020em,15px 6px 0 0.020em #444,1px 7px 0 0.020em #444,2px 7px 0 0.020em,3px 7px 0 0.020em,4px 7px 0 0.020em,5px 7px 0 0.020em,6px 7px 0 0.020em,7px 7px 0 0.020em,8px 7px 0 0.020em,15px 7px 0 0.020em #444,1px 8px 0 0.020em #444,2px 8px 0 0.020em,3px 8px 0 0.020em,4px 8px 0 0.020em,5px 8px 0 0.020em,6px 8px 0 0.020em,7px 8px 0 0.020em,8px 8px 0 0.020em,15px 8px 0 0.020em #444,2px 9px 0 0.020em #444,3px 9px 0 0.020em,4px 9px 0 0.020em,5px 9px 0 0.020em,6px 9px 0 0.020em,7px 9px 0 0.020em,8px 9px 0 0.020em,14px 9px 0 0.020em #444,3px 10px 0 0.020em #444,4px 10px 0 0.020em,5px 10px 0 0.020em,6px 10px 0 0.020em,7px 10px 0 0.020em,8px 10px 0 0.020em,13px 10px 0 0.020em #444,4px 11px 0 0.020em #444,5px 11px 0 0.020em,6px 11px 0 0.020em,7px 11px 0 0.020em,8px 11px 0 0.020em,12px 11px 0 0.020em #444,5px 12px 0 0.020em #444,6px 12px 0 0.020em,7px 12px 0 0.020em,8px 12px 0 0.020em,11px 12px 0 0.020em #444,6px 13px 0 0.020em #444,7px 13px 0 0.020em,8px 13px 0 0.020em,10px 13px 0 0.020em #444,7px 14px 0 0.020em #444,8px 14px 0 0.020em #842300,9px 14px 0 0.020em #444,8px 15px 0 0.020em #444;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.heart.is-transparent::before {
+    box-shadow: 3px 2px 0 0.020em,4px 2px 0 0.020em,5px 2px 0 0.020em,11px 2px 0 0.020em,12px 2px 0 0.020em,13px 2px 0 0.020em,2px 3px 0 0.020em,6px 3px 0 0.020em,10px 3px 0 0.020em,14px 3px 0 0.020em,1px 4px 0 0.020em,7px 4px 0 0.020em,9px 4px 0 0.020em,15px 4px 0 0.020em,1px 5px 0 0.020em,8px 5px 0 0.020em,15px 5px 0 0.020em,1px 6px 0 0.020em,15px 6px 0 0.020em,1px 7px 0 0.020em,15px 7px 0 0.020em,1px 8px 0 0.020em,15px 8px 0 0.020em,2px 9px 0 0.020em,14px 9px 0 0.020em,3px 10px 0 0.020em,13px 10px 0 0.020em,4px 11px 0 0.020em,12px 11px 0 0.020em,5px 12px 0 0.020em,11px 12px 0 0.020em,6px 13px 0 0.020em,10px 13px 0 0.020em,7px 14px 0 0.020em,9px 14px 0 0.020em,8px 15px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.heart.is-empty::before {
+    box-shadow: 3px 2px 0 0.020em,4px 2px 0 0.020em,5px 2px 0 0.020em,11px 2px 0 0.020em,12px 2px 0 0.020em,13px 2px 0 0.020em,2px 3px 0 0.020em,6px 3px 0 0.020em,10px 3px 0 0.020em,14px 3px 0 0.020em,1px 4px 0 0.020em,7px 4px 0 0.020em,9px 4px 0 0.020em,15px 4px 0 0.020em,1px 5px 0 0.020em,8px 5px 0 0.020em,15px 5px 0 0.020em,1px 6px 0 0.020em,15px 6px 0 0.020em,1px 7px 0 0.020em,15px 7px 0 0.020em,1px 8px 0 0.020em,15px 8px 0 0.020em,2px 9px 0 0.020em,14px 9px 0 0.020em,3px 10px 0 0.020em,13px 10px 0 0.020em,4px 11px 0 0.020em,12px 11px 0 0.020em,5px 12px 0 0.020em,11px 12px 0 0.020em,6px 13px 0 0.020em,10px 13px 0 0.020em,7px 14px 0 0.020em,9px 14px 0 0.020em,8px 15px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.star::before {
+    box-shadow: 8px 1px 0 0.020em #444,7px 2px 0 0.020em #444,8px 2px 0 0.020em,9px 2px 0 0.020em #444,7px 3px 0 0.020em #444,8px 3px 0 0.020em,9px 3px 0 0.020em #444,6px 4px 0 0.020em #444,7px 4px 0 0.020em,8px 4px 0 0.020em,9px 4px 0 0.020em,10px 4px 0 0.020em #444,6px 5px 0 0.020em #444,7px 5px 0 0.020em #fff,8px 5px 0 0.020em #fff,9px 5px 0 0.020em,10px 5px 0 0.020em #444,1px 6px 0 0.020em #444,2px 6px 0 0.020em #444,3px 6px 0 0.020em #444,4px 6px 0 0.020em #444,5px 6px 0 0.020em #444,6px 6px 0 0.020em #444,7px 6px 0 0.020em #fff,8px 6px 0 0.020em,9px 6px 0 0.020em,10px 6px 0 0.020em,11px 6px 0 0.020em #444,12px 6px 0 0.020em #444,13px 6px 0 0.020em #444,14px 6px 0 0.020em #444,15px 6px 0 0.020em #444,1px 7px 0 0.020em #444,2px 7px 0 0.020em,3px 7px 0 0.020em,4px 7px 0 0.020em,5px 7px 0 0.020em #fff,6px 7px 0 0.020em #fff,7px 7px 0 0.020em,8px 7px 0 0.020em,9px 7px 0 0.020em,10px 7px 0 0.020em,11px 7px 0 0.020em,12px 7px 0 0.020em,13px 7px 0 0.020em,14px 7px 0 0.020em,15px 7px 0 0.020em #444,2px 8px 0 0.020em #444,3px 8px 0 0.020em,4px 8px 0 0.020em,5px 8px 0 0.020em #fff,6px 8px 0 0.020em,7px 8px 0 0.020em,8px 8px 0 0.020em,9px 8px 0 0.020em,10px 8px 0 0.020em,11px 8px 0 0.020em,12px 8px 0 0.020em,13px 8px 0 0.020em #f59f54,14px 8px 0 0.020em #444,3px 9px 0 0.020em #444,4px 9px 0 0.020em,5px 9px 0 0.020em,6px 9px 0 0.020em,7px 9px 0 0.020em,8px 9px 0 0.020em,9px 9px 0 0.020em,10px 9px 0 0.020em,11px 9px 0 0.020em #f59f54,12px 9px 0 0.020em #f59f54,13px 9px 0 0.020em #444,4px 10px 0 0.020em #444,5px 10px 0 0.020em,6px 10px 0 0.020em,7px 10px 0 0.020em,8px 10px 0 0.020em,9px 10px 0 0.020em,10px 10px 0 0.020em,11px 10px 0 0.020em,12px 10px 0 0.020em #444,3px 11px 0 0.020em #444,4px 11px 0 0.020em,5px 11px 0 0.020em,6px 11px 0 0.020em,7px 11px 0 0.020em,8px 11px 0 0.020em #f59f54,9px 11px 0 0.020em,10px 11px 0 0.020em,11px 11px 0 0.020em,12px 11px 0 0.020em,13px 11px 0 0.020em #444,3px 12px 0 0.020em #444,4px 12px 0 0.020em,5px 12px 0 0.020em,6px 12px 0 0.020em,7px 12px 0 0.020em #f59f54,8px 12px 0 0.020em #f59f54,9px 12px 0 0.020em #f59f54,10px 12px 0 0.020em,11px 12px 0 0.020em,12px 12px 0 0.020em,13px 12px 0 0.020em #444,2px 13px 0 0.020em #444,3px 13px 0 0.020em,4px 13px 0 0.020em,5px 13px 0 0.020em #f59f54,6px 13px 0 0.020em #f59f54,7px 13px 0 0.020em #f59f54,8px 13px 0 0.020em #444,9px 13px 0 0.020em #f59f54,10px 13px 0 0.020em #f59f54,11px 13px 0 0.020em #f59f54,12px 13px 0 0.020em,13px 13px 0 0.020em,14px 13px 0 0.020em #444,2px 14px 0 0.020em #444,3px 14px 0 0.020em,4px 14px 0 0.020em #f59f54,5px 14px 0 0.020em #f59f54,6px 14px 0 0.020em #444,7px 14px 0 0.020em #444,9px 14px 0 0.020em #444,10px 14px 0 0.020em #444,11px 14px 0 0.020em #f59f54,12px 14px 0 0.020em #f59f54,13px 14px 0 0.020em,14px 14px 0 0.020em #444,1px 15px 0 0.020em #444,2px 15px 0 0.020em #f59f54,3px 15px 0 0.020em #f59f54,4px 15px 0 0.020em #444,5px 15px 0 0.020em #444,11px 15px 0 0.020em #444,12px 15px 0 0.020em #444,13px 15px 0 0.020em #f59f54,14px 15px 0 0.020em #f59f54,15px 15px 0 0.020em #444,1px 16px 0 0.020em #444,2px 16px 0 0.020em #444,3px 16px 0 0.020em #444,13px 16px 0 0.020em #444,14px 16px 0 0.020em #444,15px 16px 0 0.020em #444;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.star.is-empty::before {
+    box-shadow: 8px 1px 0 0.020em,7px 2px 0 0.020em,9px 2px 0 0.020em,7px 3px 0 0.020em,9px 3px 0 0.020em,6px 4px 0 0.020em,10px 4px 0 0.020em,6px 5px 0 0.020em,10px 5px 0 0.020em,1px 6px 0 0.020em,2px 6px 0 0.020em,3px 6px 0 0.020em,4px 6px 0 0.020em,5px 6px 0 0.020em,6px 6px 0 0.020em,11px 6px 0 0.020em,12px 6px 0 0.020em,13px 6px 0 0.020em,14px 6px 0 0.020em,15px 6px 0 0.020em,1px 7px 0 0.020em,15px 7px 0 0.020em,2px 8px 0 0.020em,14px 8px 0 0.020em,3px 9px 0 0.020em,13px 9px 0 0.020em,4px 10px 0 0.020em,12px 10px 0 0.020em,3px 11px 0 0.020em,13px 11px 0 0.020em,3px 12px 0 0.020em,13px 12px 0 0.020em,2px 13px 0 0.020em,8px 13px 0 0.020em,14px 13px 0 0.020em,2px 14px 0 0.020em,6px 14px 0 0.020em,7px 14px 0 0.020em,9px 14px 0 0.020em,10px 14px 0 0.020em,14px 14px 0 0.020em,1px 15px 0 0.020em,4px 15px 0 0.020em,5px 15px 0 0.020em,11px 15px 0 0.020em,12px 15px 0 0.020em,15px 15px 0 0.020em,1px 16px 0 0.020em,2px 16px 0 0.020em,3px 16px 0 0.020em,13px 16px 0 0.020em,14px 16px 0 0.020em,15px 16px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.star.is-half::before {
+    box-shadow: 8px 1px 0 0.020em,7px 2px 0 0.020em,8px 2px 0 0.020em #ebe527,9px 2px 0 0.020em,7px 3px 0 0.020em,8px 3px 0 0.020em #ebe527,9px 3px 0 0.020em,6px 4px 0 0.020em,7px 4px 0 0.020em #ebe527,8px 4px 0 0.020em #ebe527,10px 4px 0 0.020em,6px 5px 0 0.020em,7px 5px 0 0.020em #ebe527,8px 5px 0 0.020em #ebe527,10px 5px 0 0.020em,1px 6px 0 0.020em,2px 6px 0 0.020em,3px 6px 0 0.020em,4px 6px 0 0.020em,5px 6px 0 0.020em,6px 6px 0 0.020em,7px 6px 0 0.020em #ebe527,8px 6px 0 0.020em #ebe527,11px 6px 0 0.020em,12px 6px 0 0.020em,13px 6px 0 0.020em,14px 6px 0 0.020em,15px 6px 0 0.020em,1px 7px 0 0.020em,2px 7px 0 0.020em #ebe527,3px 7px 0 0.020em #ebe527,4px 7px 0 0.020em #ebe527,5px 7px 0 0.020em #ebe527,6px 7px 0 0.020em #ebe527,7px 7px 0 0.020em #ebe527,8px 7px 0 0.020em #ebe527,15px 7px 0 0.020em,2px 8px 0 0.020em,3px 8px 0 0.020em #ebe527,4px 8px 0 0.020em #ebe527,5px 8px 0 0.020em #ebe527,6px 8px 0 0.020em #ebe527,7px 8px 0 0.020em #ebe527,8px 8px 0 0.020em #ebe527,14px 8px 0 0.020em,3px 9px 0 0.020em,4px 9px 0 0.020em #ebe527,5px 9px 0 0.020em #ebe527,6px 9px 0 0.020em #ebe527,7px 9px 0 0.020em #ebe527,8px 9px 0 0.020em #ebe527,13px 9px 0 0.020em,4px 10px 0 0.020em,5px 10px 0 0.020em #ebe527,6px 10px 0 0.020em #ebe527,7px 10px 0 0.020em #ebe527,8px 10px 0 0.020em #ebe527,12px 10px 0 0.020em,3px 11px 0 0.020em,4px 11px 0 0.020em #ebe527,5px 11px 0 0.020em #ebe527,6px 11px 0 0.020em #ebe527,7px 11px 0 0.020em #ebe527,8px 11px 0 0.020em #f59f54,13px 11px 0 0.020em,3px 12px 0 0.020em,4px 12px 0 0.020em #ebe527,5px 12px 0 0.020em #ebe527,6px 12px 0 0.020em #ebe527,7px 12px 0 0.020em #f59f54,8px 12px 0 0.020em #f59f54,13px 12px 0 0.020em,2px 13px 0 0.020em,3px 13px 0 0.020em #ebe527,4px 13px 0 0.020em #ebe527,5px 13px 0 0.020em #f59f54,6px 13px 0 0.020em #f59f54,7px 13px 0 0.020em #f59f54,8px 13px 0 0.020em,14px 13px 0 0.020em,2px 14px 0 0.020em,3px 14px 0 0.020em #ebe527,4px 14px 0 0.020em #f59f54,5px 14px 0 0.020em #f59f54,6px 14px 0 0.020em,7px 14px 0 0.020em,9px 14px 0 0.020em,10px 14px 0 0.020em,14px 14px 0 0.020em,1px 15px 0 0.020em,2px 15px 0 0.020em #f59f54,3px 15px 0 0.020em #f59f54,4px 15px 0 0.020em,5px 15px 0 0.020em,11px 15px 0 0.020em,12px 15px 0 0.020em,15px 15px 0 0.020em,1px 16px 0 0.020em,2px 16px 0 0.020em,3px 16px 0 0.020em,13px 16px 0 0.020em,14px 16px 0 0.020em,15px 16px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.star.is-transparent::before {
+    box-shadow: 8px 1px 0 0.020em,7px 2px 0 0.020em,9px 2px 0 0.020em,7px 3px 0 0.020em,9px 3px 0 0.020em,6px 4px 0 0.020em,10px 4px 0 0.020em,6px 5px 0 0.020em,10px 5px 0 0.020em,1px 6px 0 0.020em,2px 6px 0 0.020em,3px 6px 0 0.020em,4px 6px 0 0.020em,5px 6px 0 0.020em,6px 6px 0 0.020em,11px 6px 0 0.020em,12px 6px 0 0.020em,13px 6px 0 0.020em,14px 6px 0 0.020em,15px 6px 0 0.020em,1px 7px 0 0.020em,15px 7px 0 0.020em,2px 8px 0 0.020em,14px 8px 0 0.020em,3px 9px 0 0.020em,13px 9px 0 0.020em,4px 10px 0 0.020em,12px 10px 0 0.020em,3px 11px 0 0.020em,13px 11px 0 0.020em,3px 12px 0 0.020em,13px 12px 0 0.020em,2px 13px 0 0.020em,8px 13px 0 0.020em,14px 13px 0 0.020em,2px 14px 0 0.020em,6px 14px 0 0.020em,7px 14px 0 0.020em,9px 14px 0 0.020em,10px 14px 0 0.020em,14px 14px 0 0.020em,1px 15px 0 0.020em,4px 15px 0 0.020em,5px 15px 0 0.020em,11px 15px 0 0.020em,12px 15px 0 0.020em,15px 15px 0 0.020em,1px 16px 0 0.020em,2px 16px 0 0.020em,3px 16px 0 0.020em,13px 16px 0 0.020em,14px 16px 0 0.020em,15px 16px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.trophy::before {
+    box-shadow: 3px 1px 0 0.020em #444,4px 1px 0 0.020em #444,5px 1px 0 0.020em #444,6px 1px 0 0.020em #444,7px 1px 0 0.020em #444,8px 1px 0 0.020em #444,9px 1px 0 0.020em #444,10px 1px 0 0.020em #444,11px 1px 0 0.020em #444,12px 1px 0 0.020em #444,13px 1px 0 0.020em #444,3px 2px 0 0.020em #444,4px 2px 0 0.020em,5px 2px 0 0.020em,6px 2px 0 0.020em,7px 2px 0 0.020em,8px 2px 0 0.020em,9px 2px 0 0.020em,10px 2px 0 0.020em,11px 2px 0 0.020em,12px 2px 0 0.020em #f59f54,13px 2px 0 0.020em #444,1px 3px 0 0.020em #444,2px 3px 0 0.020em #444,3px 3px 0 0.020em #444,4px 3px 0 0.020em,5px 3px 0 0.020em #fff,6px 3px 0 0.020em,7px 3px 0 0.020em,8px 3px 0 0.020em,9px 3px 0 0.020em,10px 3px 0 0.020em,11px 3px 0 0.020em,12px 3px 0 0.020em #f59f54,13px 3px 0 0.020em #444,14px 3px 0 0.020em #444,15px 3px 0 0.020em #444,1px 4px 0 0.020em #444,3px 4px 0 0.020em #444,4px 4px 0 0.020em,5px 4px 0 0.020em #fff,6px 4px 0 0.020em,7px 4px 0 0.020em,8px 4px 0 0.020em,9px 4px 0 0.020em,10px 4px 0 0.020em,11px 4px 0 0.020em,12px 4px 0 0.020em #f59f54,13px 4px 0 0.020em #444,15px 4px 0 0.020em #444,1px 5px 0 0.020em #444,3px 5px 0 0.020em #444,4px 5px 0 0.020em,5px 5px 0 0.020em #fff,6px 5px 0 0.020em,7px 5px 0 0.020em,8px 5px 0 0.020em,9px 5px 0 0.020em,10px 5px 0 0.020em,11px 5px 0 0.020em,12px 5px 0 0.020em #f59f54,13px 5px 0 0.020em #444,15px 5px 0 0.020em #444,2px 6px 0 0.020em #444,3px 6px 0 0.020em #444,4px 6px 0 0.020em,5px 6px 0 0.020em #fff,6px 6px 0 0.020em,7px 6px 0 0.020em,8px 6px 0 0.020em,9px 6px 0 0.020em,10px 6px 0 0.020em,11px 6px 0 0.020em,12px 6px 0 0.020em #f59f54,13px 6px 0 0.020em #444,14px 6px 0 0.020em #444,3px 7px 0 0.020em #444,4px 7px 0 0.020em,5px 7px 0 0.020em #fff,6px 7px 0 0.020em,7px 7px 0 0.020em,8px 7px 0 0.020em,9px 7px 0 0.020em,10px 7px 0 0.020em,11px 7px 0 0.020em,12px 7px 0 0.020em #f59f54,13px 7px 0 0.020em #444,3px 8px 0 0.020em #444,4px 8px 0 0.020em,5px 8px 0 0.020em,6px 8px 0 0.020em,7px 8px 0 0.020em,8px 8px 0 0.020em,9px 8px 0 0.020em,10px 8px 0 0.020em,11px 8px 0 0.020em,12px 8px 0 0.020em #f59f54,13px 8px 0 0.020em #444,4px 9px 0 0.020em #444,5px 9px 0 0.020em,6px 9px 0 0.020em,7px 9px 0 0.020em,8px 9px 0 0.020em,9px 9px 0 0.020em,10px 9px 0 0.020em,11px 9px 0 0.020em #f59f54,12px 9px 0 0.020em #444,5px 10px 0 0.020em #444,6px 10px 0 0.020em,7px 10px 0 0.020em,8px 10px 0 0.020em,9px 10px 0 0.020em,10px 10px 0 0.020em #f59f54,11px 10px 0 0.020em #444,6px 11px 0 0.020em #444,7px 11px 0 0.020em,8px 11px 0 0.020em,9px 11px 0 0.020em #f59f54,10px 11px 0 0.020em #444,7px 12px 0 0.020em #444,8px 12px 0 0.020em,9px 12px 0 0.020em #444,7px 13px 0 0.020em #444,8px 13px 0 0.020em,9px 13px 0 0.020em #444,6px 14px 0 0.020em #444,7px 14px 0 0.020em #444,8px 14px 0 0.020em,9px 14px 0 0.020em #444,10px 14px 0 0.020em #444,5px 15px 0 0.020em #444,6px 15px 0 0.020em,7px 15px 0 0.020em,8px 15px 0 0.020em,9px 15px 0 0.020em,10px 15px 0 0.020em #f59f54,11px 15px 0 0.020em #444,5px 16px 0 0.020em #444,6px 16px 0 0.020em #444,7px 16px 0 0.020em #444,8px 16px 0 0.020em #444,9px 16px 0 0.020em #444,10px 16px 0 0.020em #444,11px 16px 0 0.020em #444;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.trophy.is-empty::before {
+    box-shadow: 3px 1px 0 0.020em,4px 1px 0 0.020em,5px 1px 0 0.020em,6px 1px 0 0.020em,7px 1px 0 0.020em,8px 1px 0 0.020em,9px 1px 0 0.020em,10px 1px 0 0.020em,11px 1px 0 0.020em,12px 1px 0 0.020em,13px 1px 0 0.020em,3px 2px 0 0.020em,13px 2px 0 0.020em,1px 3px 0 0.020em,2px 3px 0 0.020em,3px 3px 0 0.020em,13px 3px 0 0.020em,14px 3px 0 0.020em,15px 3px 0 0.020em,1px 4px 0 0.020em,3px 4px 0 0.020em,13px 4px 0 0.020em,15px 4px 0 0.020em,1px 5px 0 0.020em,3px 5px 0 0.020em,13px 5px 0 0.020em,15px 5px 0 0.020em,2px 6px 0 0.020em,3px 6px 0 0.020em,13px 6px 0 0.020em,14px 6px 0 0.020em,3px 7px 0 0.020em,13px 7px 0 0.020em,3px 8px 0 0.020em,13px 8px 0 0.020em,4px 9px 0 0.020em,12px 9px 0 0.020em,5px 10px 0 0.020em,11px 10px 0 0.020em,6px 11px 0 0.020em,10px 11px 0 0.020em,7px 12px 0 0.020em,9px 12px 0 0.020em,7px 13px 0 0.020em,9px 13px 0 0.020em,6px 14px 0 0.020em,7px 14px 0 0.020em,9px 14px 0 0.020em,10px 14px 0 0.020em,5px 15px 0 0.020em,11px 15px 0 0.020em,5px 16px 0 0.020em,6px 16px 0 0.020em,7px 16px 0 0.020em,8px 16px 0 0.020em,9px 16px 0 0.020em,10px 16px 0 0.020em,11px 16px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.like::before {
+    box-shadow: 8px 2px 0 0.020em #333,9px 2px 0 0.020em #333,8px 3px 0 0.020em #333,9px 3px 0 0.020em,10px 3px 0 0.020em #333,8px 4px 0 0.020em #333,9px 4px 0 0.020em,10px 4px 0 0.020em #333,7px 5px 0 0.020em #333,8px 5px 0 0.020em,9px 5px 0 0.020em,10px 5px 0 0.020em #333,7px 6px 0 0.020em #333,8px 6px 0 0.020em,9px 6px 0 0.020em,10px 6px 0 0.020em #333,11px 6px 0 0.020em #333,12px 6px 0 0.020em #333,13px 6px 0 0.020em #333,14px 6px 0 0.020em #333,15px 6px 0 0.020em #333,6px 7px 0 0.020em #333,7px 7px 0 0.020em,8px 7px 0 0.020em,9px 7px 0 0.020em,10px 7px 0 0.020em,11px 7px 0 0.020em,12px 7px 0 0.020em,13px 7px 0 0.020em,14px 7px 0 0.020em,15px 7px 0 0.020em,16px 7px 0 0.020em #333,2px 8px 0 0.020em #333,3px 8px 0 0.020em #333,4px 8px 0 0.020em #333,6px 8px 0 0.020em #333,7px 8px 0 0.020em,8px 8px 0 0.020em,9px 8px 0 0.020em,10px 8px 0 0.020em,11px 8px 0 0.020em,12px 8px 0 0.020em,13px 8px 0 0.020em,14px 8px 0 0.020em,15px 8px 0 0.020em,16px 8px 0 0.020em #333,1px 9px 0 0.020em #333,2px 9px 0 0.020em #2e77be,3px 9px 0 0.020em #2e77be,4px 9px 0 0.020em #2e77be,5px 9px 0 0.020em #333,6px 9px 0 0.020em,7px 9px 0 0.020em,8px 9px 0 0.020em,9px 9px 0 0.020em,10px 9px 0 0.020em,11px 9px 0 0.020em,12px 9px 0 0.020em,13px 9px 0 0.020em,14px 9px 0 0.020em,15px 9px 0 0.020em,16px 9px 0 0.020em #333,1px 10px 0 0.020em #333,2px 10px 0 0.020em #2e77be,3px 10px 0 0.020em #2e77be,4px 10px 0 0.020em #2e77be,5px 10px 0 0.020em #333,6px 10px 0 0.020em,7px 10px 0 0.020em,8px 10px 0 0.020em,9px 10px 0 0.020em,10px 10px 0 0.020em,11px 10px 0 0.020em,12px 10px 0 0.020em,13px 10px 0 0.020em,14px 10px 0 0.020em,15px 10px 0 0.020em #333,1px 11px 0 0.020em #333,2px 11px 0 0.020em #2e77be,3px 11px 0 0.020em #2e77be,4px 11px 0 0.020em #2e77be,5px 11px 0 0.020em #333,6px 11px 0 0.020em,7px 11px 0 0.020em,8px 11px 0 0.020em,9px 11px 0 0.020em,10px 11px 0 0.020em,11px 11px 0 0.020em,12px 11px 0 0.020em,13px 11px 0 0.020em,14px 11px 0 0.020em,15px 11px 0 0.020em #333,1px 12px 0 0.020em #333,2px 12px 0 0.020em #2e77be,3px 12px 0 0.020em #2e77be,4px 12px 0 0.020em #2e77be,5px 12px 0 0.020em #333,6px 12px 0 0.020em,7px 12px 0 0.020em,8px 12px 0 0.020em,9px 12px 0 0.020em,10px 12px 0 0.020em,11px 12px 0 0.020em,12px 12px 0 0.020em,13px 12px 0 0.020em,14px 12px 0 0.020em,15px 12px 0 0.020em #333,1px 13px 0 0.020em #333,2px 13px 0 0.020em #2e77be,3px 13px 0 0.020em #2e77be,4px 13px 0 0.020em #2e77be,5px 13px 0 0.020em #333,6px 13px 0 0.020em,7px 13px 0 0.020em,8px 13px 0 0.020em,9px 13px 0 0.020em,10px 13px 0 0.020em,11px 13px 0 0.020em,12px 13px 0 0.020em,13px 13px 0 0.020em,14px 13px 0 0.020em #333,1px 14px 0 0.020em #333,2px 14px 0 0.020em #2e77be,3px 14px 0 0.020em #2e77be,4px 14px 0 0.020em #2e77be,5px 14px 0 0.020em #333,6px 14px 0 0.020em,7px 14px 0 0.020em,8px 14px 0 0.020em,9px 14px 0 0.020em,10px 14px 0 0.020em,11px 14px 0 0.020em,12px 14px 0 0.020em,13px 14px 0 0.020em,14px 14px 0 0.020em #333,2px 15px 0 0.020em #333,3px 15px 0 0.020em #333,4px 15px 0 0.020em #333,6px 15px 0 0.020em #333,7px 15px 0 0.020em #333,8px 15px 0 0.020em #333,9px 15px 0 0.020em #333,10px 15px 0 0.020em #333,11px 15px 0 0.020em #333,12px 15px 0 0.020em #333,13px 15px 0 0.020em #333;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.like.is-empty::before {
+    box-shadow: 8px 2px 0 0.020em,9px 2px 0 0.020em,8px 3px 0 0.020em,10px 3px 0 0.020em,8px 4px 0 0.020em,10px 4px 0 0.020em,7px 5px 0 0.020em,10px 5px 0 0.020em,7px 6px 0 0.020em,10px 6px 0 0.020em,11px 6px 0 0.020em,12px 6px 0 0.020em,13px 6px 0 0.020em,14px 6px 0 0.020em,15px 6px 0 0.020em,6px 7px 0 0.020em,16px 7px 0 0.020em,2px 8px 0 0.020em,3px 8px 0 0.020em,4px 8px 0 0.020em,6px 8px 0 0.020em,16px 8px 0 0.020em,1px 9px 0 0.020em,5px 9px 0 0.020em,16px 9px 0 0.020em,1px 10px 0 0.020em,5px 10px 0 0.020em,15px 10px 0 0.020em,1px 11px 0 0.020em,5px 11px 0 0.020em,15px 11px 0 0.020em,1px 12px 0 0.020em,5px 12px 0 0.020em,15px 12px 0 0.020em,1px 13px 0 0.020em,5px 13px 0 0.020em,14px 13px 0 0.020em,1px 14px 0 0.020em,5px 14px 0 0.020em,14px 14px 0 0.020em,2px 15px 0 0.020em,3px 15px 0 0.020em,4px 15px 0 0.020em,6px 15px 0 0.020em,7px 15px 0 0.020em,8px 15px 0 0.020em,9px 15px 0 0.020em,10px 15px 0 0.020em,11px 15px 0 0.020em,12px 15px 0 0.020em,13px 15px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.twitter::before {
+    box-shadow: 2px 1px 0 0.020em,3px 1px 0 0.020em,4px 1px 0 0.020em,5px 1px 0 0.020em,6px 1px 0 0.020em,7px 1px 0 0.020em,8px 1px 0 0.020em,9px 1px 0 0.020em,10px 1px 0 0.020em,11px 1px 0 0.020em,12px 1px 0 0.020em,13px 1px 0 0.020em,14px 1px 0 0.020em,15px 1px 0 0.020em,1px 2px 0 0.020em,2px 2px 0 0.020em,3px 2px 0 0.020em,4px 2px 0 0.020em,5px 2px 0 0.020em,6px 2px 0 0.020em,7px 2px 0 0.020em,8px 2px 0 0.020em,9px 2px 0 0.020em,10px 2px 0 0.020em,11px 2px 0 0.020em,12px 2px 0 0.020em,13px 2px 0 0.020em,14px 2px 0 0.020em,15px 2px 0 0.020em,16px 2px 0 0.020em,1px 3px 0 0.020em,2px 3px 0 0.020em #fff,3px 3px 0 0.020em,4px 3px 0 0.020em,5px 3px 0 0.020em,6px 3px 0 0.020em,7px 3px 0 0.020em,8px 3px 0 0.020em,9px 3px 0 0.020em,10px 3px 0 0.020em #fff,11px 3px 0 0.020em #fff,12px 3px 0 0.020em #fff,13px 3px 0 0.020em,14px 3px 0 0.020em,15px 3px 0 0.020em,16px 3px 0 0.020em,1px 4px 0 0.020em,2px 4px 0 0.020em #fff,3px 4px 0 0.020em #fff,4px 4px 0 0.020em #fff,5px 4px 0 0.020em,6px 4px 0 0.020em,7px 4px 0 0.020em,8px 4px 0 0.020em,9px 4px 0 0.020em #fff,10px 4px 0 0.020em #fff,11px 4px 0 0.020em #fff,12px 4px 0 0.020em #fff,13px 4px 0 0.020em #fff,14px 4px 0 0.020em,15px 4px 0 0.020em,16px 4px 0 0.020em,1px 5px 0 0.020em,2px 5px 0 0.020em #fff,3px 5px 0 0.020em #fff,4px 5px 0 0.020em #fff,5px 5px 0 0.020em #fff,6px 5px 0 0.020em #fff,7px 5px 0 0.020em,8px 5px 0 0.020em #fff,9px 5px 0 0.020em #fff,10px 5px 0 0.020em #fff,11px 5px 0 0.020em #fff,12px 5px 0 0.020em #fff,13px 5px 0 0.020em #fff,14px 5px 0 0.020em #fff,15px 5px 0 0.020em #fff,16px 5px 0 0.020em,1px 6px 0 0.020em,2px 6px 0 0.020em,3px 6px 0 0.020em #fff,4px 6px 0 0.020em #fff,5px 6px 0 0.020em #fff,6px 6px 0 0.020em #fff,7px 6px 0 0.020em #fff,8px 6px 0 0.020em #fff,9px 6px 0 0.020em #fff,10px 6px 0 0.020em #fff,11px 6px 0 0.020em #fff,12px 6px 0 0.020em #fff,13px 6px 0 0.020em #fff,14px 6px 0 0.020em #fff,15px 6px 0 0.020em,16px 6px 0 0.020em,1px 7px 0 0.020em,2px 7px 0 0.020em,3px 7px 0 0.020em #fff,4px 7px 0 0.020em #fff,5px 7px 0 0.020em #fff,6px 7px 0 0.020em #fff,7px 7px 0 0.020em #fff,8px 7px 0 0.020em #fff,9px 7px 0 0.020em #fff,10px 7px 0 0.020em #fff,11px 7px 0 0.020em #fff,12px 7px 0 0.020em #fff,13px 7px 0 0.020em #fff,14px 7px 0 0.020em #fff,15px 7px 0 0.020em,16px 7px 0 0.020em,1px 8px 0 0.020em,2px 8px 0 0.020em,3px 8px 0 0.020em,4px 8px 0 0.020em #fff,5px 8px 0 0.020em #fff,6px 8px 0 0.020em #fff,7px 8px 0 0.020em #fff,8px 8px 0 0.020em #fff,9px 8px 0 0.020em #fff,10px 8px 0 0.020em #fff,11px 8px 0 0.020em #fff,12px 8px 0 0.020em #fff,13px 8px 0 0.020em #fff,14px 8px 0 0.020em,15px 8px 0 0.020em,16px 8px 0 0.020em,1px 9px 0 0.020em,2px 9px 0 0.020em,3px 9px 0 0.020em,4px 9px 0 0.020em #fff,5px 9px 0 0.020em #fff,6px 9px 0 0.020em #fff,7px 9px 0 0.020em #fff,8px 9px 0 0.020em #fff,9px 9px 0 0.020em #fff,10px 9px 0 0.020em #fff,11px 9px 0 0.020em #fff,12px 9px 0 0.020em #fff,13px 9px 0 0.020em,14px 9px 0 0.020em,15px 9px 0 0.020em,16px 9px 0 0.020em,1px 10px 0 0.020em,2px 10px 0 0.020em,3px 10px 0 0.020em,4px 10px 0 0.020em,5px 10px 0 0.020em #fff,6px 10px 0 0.020em #fff,7px 10px 0 0.020em #fff,8px 10px 0 0.020em #fff,9px 10px 0 0.020em #fff,10px 10px 0 0.020em #fff,11px 10px 0 0.020em #fff,12px 10px 0 0.020em #fff,13px 10px 0 0.020em,14px 10px 0 0.020em,15px 10px 0 0.020em,16px 10px 0 0.020em,1px 11px 0 0.020em,2px 11px 0 0.020em,3px 11px 0 0.020em,4px 11px 0 0.020em,5px 11px 0 0.020em,6px 11px 0 0.020em #fff,7px 11px 0 0.020em #fff,8px 11px 0 0.020em #fff,9px 11px 0 0.020em #fff,10px 11px 0 0.020em #fff,11px 11px 0 0.020em #fff,12px 11px 0 0.020em #fff,13px 11px 0 0.020em,14px 11px 0 0.020em,15px 11px 0 0.020em,16px 11px 0 0.020em,1px 12px 0 0.020em,2px 12px 0 0.020em,3px 12px 0 0.020em,4px 12px 0 0.020em,5px 12px 0 0.020em #fff,6px 12px 0 0.020em #fff,7px 12px 0 0.020em #fff,8px 12px 0 0.020em #fff,9px 12px 0 0.020em #fff,10px 12px 0 0.020em #fff,11px 12px 0 0.020em #fff,12px 12px 0 0.020em,13px 12px 0 0.020em,14px 12px 0 0.020em,15px 12px 0 0.020em,16px 12px 0 0.020em,1px 13px 0 0.020em,2px 13px 0 0.020em,3px 13px 0 0.020em #fff,4px 13px 0 0.020em #fff,5px 13px 0 0.020em #fff,6px 13px 0 0.020em #fff,7px 13px 0 0.020em #fff,8px 13px 0 0.020em #fff,9px 13px 0 0.020em #fff,10px 13px 0 0.020em,11px 13px 0 0.020em,12px 13px 0 0.020em,13px 13px 0 0.020em,14px 13px 0 0.020em,15px 13px 0 0.020em,16px 13px 0 0.020em,1px 14px 0 0.020em,2px 14px 0 0.020em,3px 14px 0 0.020em,4px 14px 0 0.020em #fff,5px 14px 0 0.020em #fff,6px 14px 0 0.020em #fff,7px 14px 0 0.020em,8px 14px 0 0.020em,9px 14px 0 0.020em,10px 14px 0 0.020em,11px 14px 0 0.020em,12px 14px 0 0.020em,13px 14px 0 0.020em,14px 14px 0 0.020em,15px 14px 0 0.020em,16px 14px 0 0.020em,1px 15px 0 0.020em,2px 15px 0 0.020em,3px 15px 0 0.020em,4px 15px 0 0.020em,5px 15px 0 0.020em,6px 15px 0 0.020em,7px 15px 0 0.020em,8px 15px 0 0.020em,9px 15px 0 0.020em,10px 15px 0 0.020em,11px 15px 0 0.020em,12px 15px 0 0.020em,13px 15px 0 0.020em,14px 15px 0 0.020em,15px 15px 0 0.020em,16px 15px 0 0.020em,2px 16px 0 0.020em,3px 16px 0 0.020em,4px 16px 0 0.020em,5px 16px 0 0.020em,6px 16px 0 0.020em,7px 16px 0 0.020em,8px 16px 0 0.020em,9px 16px 0 0.020em,10px 16px 0 0.020em,11px 16px 0 0.020em,12px 16px 0 0.020em,13px 16px 0 0.020em,14px 16px 0 0.020em,15px 16px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-icon.github::before {
+    box-shadow: 2px 1px 0 0.020em,3px 1px 0 0.020em,4px 1px 0 0.020em,5px 1px 0 0.020em,6px 1px 0 0.020em,7px 1px 0 0.020em,8px 1px 0 0.020em,9px 1px 0 0.020em,10px 1px 0 0.020em,11px 1px 0 0.020em,12px 1px 0 0.020em,13px 1px 0 0.020em,14px 1px 0 0.020em,15px 1px 0 0.020em,1px 2px 0 0.020em,2px 2px 0 0.020em,3px 2px 0 0.020em,4px 2px 0 0.020em,5px 2px 0 0.020em #fff,6px 2px 0 0.020em,7px 2px 0 0.020em,8px 2px 0 0.020em,9px 2px 0 0.020em,10px 2px 0 0.020em,11px 2px 0 0.020em,12px 2px 0 0.020em,13px 2px 0 0.020em,14px 2px 0 0.020em #fff,15px 2px 0 0.020em,16px 2px 0 0.020em,1px 3px 0 0.020em,2px 3px 0 0.020em,3px 3px 0 0.020em,4px 3px 0 0.020em,5px 3px 0 0.020em #fff,6px 3px 0 0.020em #fff,7px 3px 0 0.020em,8px 3px 0 0.020em,9px 3px 0 0.020em,10px 3px 0 0.020em,11px 3px 0 0.020em,12px 3px 0 0.020em,13px 3px 0 0.020em #fff,14px 3px 0 0.020em #fff,15px 3px 0 0.020em,16px 3px 0 0.020em,1px 4px 0 0.020em,2px 4px 0 0.020em,3px 4px 0 0.020em,4px 4px 0 0.020em,5px 4px 0 0.020em #fff,6px 4px 0 0.020em #fff,7px 4px 0 0.020em #fff,8px 4px 0 0.020em #fff,9px 4px 0 0.020em #fff,10px 4px 0 0.020em #fff,11px 4px 0 0.020em #fff,12px 4px 0 0.020em #fff,13px 4px 0 0.020em #fff,14px 4px 0 0.020em #fff,15px 4px 0 0.020em,16px 4px 0 0.020em,1px 5px 0 0.020em,2px 5px 0 0.020em,3px 5px 0 0.020em,4px 5px 0 0.020em #fff,5px 5px 0 0.020em #fff,6px 5px 0 0.020em #fff,7px 5px 0 0.020em #fff,8px 5px 0 0.020em #fff,9px 5px 0 0.020em #fff,10px 5px 0 0.020em #fff,11px 5px 0 0.020em #fff,12px 5px 0 0.020em #fff,13px 5px 0 0.020em #fff,14px 5px 0 0.020em #fff,15px 5px 0 0.020em #fff,16px 5px 0 0.020em,1px 6px 0 0.020em,2px 6px 0 0.020em,3px 6px 0 0.020em,4px 6px 0 0.020em #fff,5px 6px 0 0.020em #fff,6px 6px 0 0.020em #fff,7px 6px 0 0.020em #fff,8px 6px 0 0.020em #fff,9px 6px 0 0.020em #fff,10px 6px 0 0.020em #fff,11px 6px 0 0.020em #fff,12px 6px 0 0.020em #fff,13px 6px 0 0.020em #fff,14px 6px 0 0.020em #fff,15px 6px 0 0.020em #fff,16px 6px 0 0.020em,1px 7px 0 0.020em,2px 7px 0 0.020em,3px 7px 0 0.020em,4px 7px 0 0.020em #fff,5px 7px 0 0.020em #fff,6px 7px 0 0.020em #fff,7px 7px 0 0.020em #fff,8px 7px 0 0.020em #fff,9px 7px 0 0.020em #fff,10px 7px 0 0.020em #fff,11px 7px 0 0.020em #fff,12px 7px 0 0.020em #fff,13px 7px 0 0.020em #fff,14px 7px 0 0.020em #fff,15px 7px 0 0.020em #fff,16px 7px 0 0.020em,1px 8px 0 0.020em,2px 8px 0 0.020em,3px 8px 0 0.020em,4px 8px 0 0.020em #fff,5px 8px 0 0.020em #fff,6px 8px 0 0.020em #fff,7px 8px 0 0.020em #fff,8px 8px 0 0.020em #fff,9px 8px 0 0.020em #fff,10px 8px 0 0.020em #fff,11px 8px 0 0.020em #fff,12px 8px 0 0.020em #fff,13px 8px 0 0.020em #fff,14px 8px 0 0.020em #fff,15px 8px 0 0.020em #fff,16px 8px 0 0.020em,1px 9px 0 0.020em,2px 9px 0 0.020em,3px 9px 0 0.020em,4px 9px 0 0.020em,5px 9px 0 0.020em #fff,6px 9px 0 0.020em #fff,7px 9px 0 0.020em #fff,8px 9px 0 0.020em #fff,9px 9px 0 0.020em #fff,10px 9px 0 0.020em #fff,11px 9px 0 0.020em #fff,12px 9px 0 0.020em #fff,13px 9px 0 0.020em #fff,14px 9px 0 0.020em #fff,15px 9px 0 0.020em,16px 9px 0 0.020em,1px 10px 0 0.020em,2px 10px 0 0.020em,3px 10px 0 0.020em,4px 10px 0 0.020em,5px 10px 0 0.020em,6px 10px 0 0.020em #fff,7px 10px 0 0.020em #fff,8px 10px 0 0.020em #fff,9px 10px 0 0.020em #fff,10px 10px 0 0.020em #fff,11px 10px 0 0.020em #fff,12px 10px 0 0.020em #fff,13px 10px 0 0.020em #fff,14px 10px 0 0.020em,15px 10px 0 0.020em,16px 10px 0 0.020em,1px 11px 0 0.020em,2px 11px 0 0.020em #fff,3px 11px 0 0.020em #fff,4px 11px 0 0.020em,5px 11px 0 0.020em,6px 11px 0 0.020em,7px 11px 0 0.020em,8px 11px 0 0.020em #fff,9px 11px 0 0.020em #fff,10px 11px 0 0.020em #fff,11px 11px 0 0.020em #fff,12px 11px 0 0.020em,13px 11px 0 0.020em,14px 11px 0 0.020em,15px 11px 0 0.020em,16px 11px 0 0.020em,1px 12px 0 0.020em,2px 12px 0 0.020em,3px 12px 0 0.020em,4px 12px 0 0.020em #fff,5px 12px 0 0.020em,6px 12px 0 0.020em,7px 12px 0 0.020em #fff,8px 12px 0 0.020em #fff,9px 12px 0 0.020em #fff,10px 12px 0 0.020em #fff,11px 12px 0 0.020em #fff,12px 12px 0 0.020em #fff,13px 12px 0 0.020em,14px 12px 0 0.020em,15px 12px 0 0.020em,16px 12px 0 0.020em,1px 13px 0 0.020em,2px 13px 0 0.020em,3px 13px 0 0.020em,4px 13px 0 0.020em,5px 13px 0 0.020em #fff,6px 13px 0 0.020em #fff,7px 13px 0 0.020em #fff,8px 13px 0 0.020em #fff,9px 13px 0 0.020em #fff,10px 13px 0 0.020em #fff,11px 13px 0 0.020em #fff,12px 13px 0 0.020em #fff,13px 13px 0 0.020em,14px 13px 0 0.020em,15px 13px 0 0.020em,16px 13px 0 0.020em,1px 14px 0 0.020em,2px 14px 0 0.020em,3px 14px 0 0.020em,4px 14px 0 0.020em,5px 14px 0 0.020em,6px 14px 0 0.020em,7px 14px 0 0.020em #fff,8px 14px 0 0.020em #fff,9px 14px 0 0.020em #fff,10px 14px 0 0.020em #fff,11px 14px 0 0.020em #fff,12px 14px 0 0.020em #fff,13px 14px 0 0.020em,14px 14px 0 0.020em,15px 14px 0 0.020em,16px 14px 0 0.020em,1px 15px 0 0.020em,2px 15px 0 0.020em,3px 15px 0 0.020em,4px 15px 0 0.020em,5px 15px 0 0.020em,6px 15px 0 0.020em,7px 15px 0 0.020em #fff,8px 15px 0 0.020em #fff,9px 15px 0 0.020em #fff,10px 15px 0 0.020em #fff,11px 15px 0 0.020em #fff,12px 15px 0 0.020em #fff,13px 15px 0 0.020em,14px 15px 0 0.020em,15px 15px 0 0.020em,16px 15px 0 0.020em,2px 16px 0 0.020em,3px 16px 0 0.020em,4px 16px 0 0.020em,5px 16px 0 0.020em,6px 16px 0 0.020em,7px 16px 0 0.020em,8px 16px 0 0.020em,9px 16px 0 0.020em,10px 16px 0 0.020em,11px 16px 0 0.020em,12px 16px 0 0.020em,13px 16px 0 0.020em,14px 16px 0 0.020em,15px 16px 0 0.020em;
+  }
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-octocat::before {
+    box-shadow: 24px 6px 0 0.020em,78px 6px 0 0.020em,24px 12px 0 0.020em,30px 12px 0 0.020em,72px 12px 0 0.020em,78px 12px 0 0.020em,24px 18px 0 0.020em,30px 18px 0 0.020em,36px 18px 0 0.020em,42px 18px 0 0.020em,48px 18px 0 0.020em,54px 18px 0 0.020em,60px 18px 0 0.020em,66px 18px 0 0.020em,72px 18px 0 0.020em,78px 18px 0 0.020em,18px 24px 0 0.020em,24px 24px 0 0.020em,30px 24px 0 0.020em,36px 24px 0 0.020em,42px 24px 0 0.020em,48px 24px 0 0.020em,54px 24px 0 0.020em,60px 24px 0 0.020em,66px 24px 0 0.020em,72px 24px 0 0.020em,78px 24px 0 0.020em,84px 24px 0 0.020em,18px 30px 0 0.020em,24px 30px 0 0.020em,30px 30px 0 0.020em,36px 30px 0 0.020em,42px 30px 0 0.020em,48px 30px 0 0.020em,54px 30px 0 0.020em,60px 30px 0 0.020em,66px 30px 0 0.020em,72px 30px 0 0.020em,78px 30px 0 0.020em,84px 30px 0 0.020em,18px 36px 0 0.020em,24px 36px 0 0.020em,30px 36px 0 0.020em,36px 36px 0 0.020em #ffdec4,42px 36px 0 0.020em #ffdec4,48px 36px 0 0.020em #ffdec4,54px 36px 0 0.020em #ffdec4,60px 36px 0 0.020em #ffdec4,66px 36px 0 0.020em #ffdec4,72px 36px 0 0.020em,78px 36px 0 0.020em,84px 36px 0 0.020em,18px 42px 0 0.020em,24px 42px 0 0.020em,30px 42px 0 0.020em #ffdec4,36px 42px 0 0.020em #cb7066,42px 42px 0 0.020em #ffdec4,48px 42px 0 0.020em #ffdec4,54px 42px 0 0.020em #ffdec4,60px 42px 0 0.020em #ffdec4,66px 42px 0 0.020em #cb7066,72px 42px 0 0.020em #ffdec4,78px 42px 0 0.020em,84px 42px 0 0.020em,18px 48px 0 0.020em,24px 48px 0 0.020em,30px 48px 0 0.020em #ffdec4,36px 48px 0 0.020em #cb7066,42px 48px 0 0.020em #ffdec4,48px 48px 0 0.020em #ffdec4,54px 48px 0 0.020em #ffdec4,60px 48px 0 0.020em #ffdec4,66px 48px 0 0.020em #cb7066,72px 48px 0 0.020em #ffdec4,78px 48px 0 0.020em,84px 48px 0 0.020em,24px 54px 0 0.020em,30px 54px 0 0.020em,36px 54px 0 0.020em #ffdec4,42px 54px 0 0.020em #ffdec4,48px 54px 0 0.020em #cb7066,54px 54px 0 0.020em #cb7066,60px 54px 0 0.020em #ffdec4,66px 54px 0 0.020em #ffdec4,72px 54px 0 0.020em,78px 54px 0 0.020em,6px 60px 0 0.020em,12px 60px 0 0.020em,42px 60px 0 0.020em,48px 60px 0 0.020em,54px 60px 0 0.020em,60px 60px 0 0.020em,18px 66px 0 0.020em,24px 66px 0 0.020em,36px 66px 0 0.020em,42px 66px 0 0.020em,48px 66px 0 0.020em,54px 66px 0 0.020em,60px 66px 0 0.020em,66px 66px 0 0.020em,24px 72px 0 0.020em,30px 72px 0 0.020em,36px 72px 0 0.020em,42px 72px 0 0.020em,48px 72px 0 0.020em,54px 72px 0 0.020em,60px 72px 0 0.020em,66px 72px 0 0.020em,36px 78px 0 0.020em,48px 78px 0 0.020em,54px 78px 0 0.020em,66px 78px 0 0.020em,36px 84px 0 0.020em,48px 84px 0 0.020em,54px 84px 0 0.020em,66px 84px 0 0.020em,30px 90px 0 0.020em,42px 90px 0 0.020em,60px 90px 0 0.020em,72px 90px 0 0.020em;
+  }
+}
+@keyframes wave {
+  50% {
+    width: 6px;
+    height: 6px;
+    color: #333;
+    box-shadow: 24px 6px,78px 6px,24px 12px,30px 12px,72px 12px,78px 12px,24px 18px,30px 18px,36px 18px,42px 18px,48px 18px,54px 18px,60px 18px,66px 18px,72px 18px,78px 18px,18px 24px,24px 24px,30px 24px,36px 24px,42px 24px,48px 24px,54px 24px,60px 24px,66px 24px,72px 24px,78px 24px,84px 24px,18px 30px,24px 30px,30px 30px,36px 30px,42px 30px,48px 30px,54px 30px,60px 30px,66px 30px,72px 30px,78px 30px,84px 30px,18px 36px,24px 36px,30px 36px,36px 36px #ffdec4,42px 36px #ffdec4,48px 36px #ffdec4,54px 36px #ffdec4,60px 36px #ffdec4,66px 36px #ffdec4,72px 36px,78px 36px,84px 36px,18px 42px,24px 42px,30px 42px #ffdec4,36px 42px #ffdec4,42px 42px #ffdec4,48px 42px #ffdec4,54px 42px #ffdec4,60px 42px #ffdec4,66px 42px #ffdec4,72px 42px #ffdec4,78px 42px,84px 42px,12px 48px,18px 48px,24px 48px,30px 48px #ffdec4,36px 48px #cb7066,42px 48px #ffdec4,48px 48px #ffdec4,54px 48px #ffdec4,60px 48px #ffdec4,66px 48px #cb7066,72px 48px #ffdec4,78px 48px,84px 48px,12px 54px,24px 54px,30px 54px,36px 54px #ffdec4,42px 54px #ffdec4,48px 54px #cb7066,54px 54px #cb7066,60px 54px #ffdec4,66px 54px #ffdec4,72px 54px,78px 54px,18px 60px,42px 60px,48px 60px,54px 60px,60px 60px,24px 66px,36px 66px,42px 66px,48px 66px,54px 66px,60px 66px,66px 66px,24px 72px,30px 72px,36px 72px,42px 72px,48px 72px,54px 72px,60px 72px,66px 72px,36px 78px,48px 78px,54px 78px,66px 78px,36px 84px,48px 84px,54px 84px,66px 84px,30px 90px,42px 90px,60px 90px,72px 90px;
+    @supports (-moz-appearance: meterbar) {
+      .nes-octocat {
+        box-shadow: 24px 6px 0 0.020em,78px 6px 0 0.020em,24px 12px 0 0.020em,30px 12px 0 0.020em,72px 12px 0 0.020em,78px 12px 0 0.020em,24px 18px 0 0.020em,30px 18px 0 0.020em,36px 18px 0 0.020em,42px 18px 0 0.020em,48px 18px 0 0.020em,54px 18px 0 0.020em,60px 18px 0 0.020em,66px 18px 0 0.020em,72px 18px 0 0.020em,78px 18px 0 0.020em,18px 24px 0 0.020em,24px 24px 0 0.020em,30px 24px 0 0.020em,36px 24px 0 0.020em,42px 24px 0 0.020em,48px 24px 0 0.020em,54px 24px 0 0.020em,60px 24px 0 0.020em,66px 24px 0 0.020em,72px 24px 0 0.020em,78px 24px 0 0.020em,84px 24px 0 0.020em,18px 30px 0 0.020em,24px 30px 0 0.020em,30px 30px 0 0.020em,36px 30px 0 0.020em,42px 30px 0 0.020em,48px 30px 0 0.020em,54px 30px 0 0.020em,60px 30px 0 0.020em,66px 30px 0 0.020em,72px 30px 0 0.020em,78px 30px 0 0.020em,84px 30px 0 0.020em,18px 36px 0 0.020em,24px 36px 0 0.020em,30px 36px 0 0.020em,36px 36px 0 0.020em #ffdec4,42px 36px 0 0.020em #ffdec4,48px 36px 0 0.020em #ffdec4,54px 36px 0 0.020em #ffdec4,60px 36px 0 0.020em #ffdec4,66px 36px 0 0.020em #ffdec4,72px 36px 0 0.020em,78px 36px 0 0.020em,84px 36px 0 0.020em,18px 42px 0 0.020em,24px 42px 0 0.020em,30px 42px 0 0.020em #ffdec4,36px 42px 0 0.020em #ffdec4,42px 42px 0 0.020em #ffdec4,48px 42px 0 0.020em #ffdec4,54px 42px 0 0.020em #ffdec4,60px 42px 0 0.020em #ffdec4,66px 42px 0 0.020em #ffdec4,72px 42px 0 0.020em #ffdec4,78px 42px 0 0.020em,84px 42px 0 0.020em,12px 48px 0 0.020em,18px 48px 0 0.020em,24px 48px 0 0.020em,30px 48px 0 0.020em #ffdec4,36px 48px 0 0.020em #cb7066,42px 48px 0 0.020em #ffdec4,48px 48px 0 0.020em #ffdec4,54px 48px 0 0.020em #ffdec4,60px 48px 0 0.020em #ffdec4,66px 48px 0 0.020em #cb7066,72px 48px 0 0.020em #ffdec4,78px 48px 0 0.020em,84px 48px 0 0.020em,12px 54px 0 0.020em,24px 54px 0 0.020em,30px 54px 0 0.020em,36px 54px 0 0.020em #ffdec4,42px 54px 0 0.020em #ffdec4,48px 54px 0 0.020em #cb7066,54px 54px 0 0.020em #cb7066,60px 54px 0 0.020em #ffdec4,66px 54px 0 0.020em #ffdec4,72px 54px 0 0.020em,78px 54px 0 0.020em,18px 60px 0 0.020em,42px 60px 0 0.020em,48px 60px 0 0.020em,54px 60px 0 0.020em,60px 60px 0 0.020em,24px 66px 0 0.020em,36px 66px 0 0.020em,42px 66px 0 0.020em,48px 66px 0 0.020em,54px 66px 0 0.020em,60px 66px 0 0.020em,66px 66px 0 0.020em,24px 72px 0 0.020em,30px 72px 0 0.020em,36px 72px 0 0.020em,42px 72px 0 0.020em,48px 72px 0 0.020em,54px 72px 0 0.020em,60px 72px 0 0.020em,66px 72px 0 0.020em,36px 78px 0 0.020em,48px 78px 0 0.020em,54px 78px 0 0.020em,66px 78px 0 0.020em,36px 84px 0 0.020em,48px 84px 0 0.020em,54px 84px 0 0.020em,66px 84px 0 0.020em,30px 90px 0 0.020em,42px 90px 0 0.020em,60px 90px 0 0.020em,72px 90px 0 0.020em;
+      }
+    }
+  }
+}
+
+.nes-octocat {
+  position: relative;
+  display: inline-block;
+  width: 84px;
+  height: 90px;
+}
+.nes-octocat::before {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  content: "";
+  background: transparent;
+  width: 6px;
+  height: 6px;
+  color: #333;
+  box-shadow: 24px 6px,78px 6px,24px 12px,30px 12px,72px 12px,78px 12px,24px 18px,30px 18px,36px 18px,42px 18px,48px 18px,54px 18px,60px 18px,66px 18px,72px 18px,78px 18px,18px 24px,24px 24px,30px 24px,36px 24px,42px 24px,48px 24px,54px 24px,60px 24px,66px 24px,72px 24px,78px 24px,84px 24px,18px 30px,24px 30px,30px 30px,36px 30px,42px 30px,48px 30px,54px 30px,60px 30px,66px 30px,72px 30px,78px 30px,84px 30px,18px 36px,24px 36px,30px 36px,36px 36px #ffdec4,42px 36px #ffdec4,48px 36px #ffdec4,54px 36px #ffdec4,60px 36px #ffdec4,66px 36px #ffdec4,72px 36px,78px 36px,84px 36px,18px 42px,24px 42px,30px 42px #ffdec4,36px 42px #cb7066,42px 42px #ffdec4,48px 42px #ffdec4,54px 42px #ffdec4,60px 42px #ffdec4,66px 42px #cb7066,72px 42px #ffdec4,78px 42px,84px 42px,18px 48px,24px 48px,30px 48px #ffdec4,36px 48px #cb7066,42px 48px #ffdec4,48px 48px #ffdec4,54px 48px #ffdec4,60px 48px #ffdec4,66px 48px #cb7066,72px 48px #ffdec4,78px 48px,84px 48px,24px 54px,30px 54px,36px 54px #ffdec4,42px 54px #ffdec4,48px 54px #cb7066,54px 54px #cb7066,60px 54px #ffdec4,66px 54px #ffdec4,72px 54px,78px 54px,6px 60px,12px 60px,42px 60px,48px 60px,54px 60px,60px 60px,18px 66px,24px 66px,36px 66px,42px 66px,48px 66px,54px 66px,60px 66px,66px 66px,24px 72px,30px 72px,36px 72px,42px 72px,48px 72px,54px 72px,60px 72px,66px 72px,36px 78px,48px 78px,54px 78px,66px 78px,36px 84px,48px 84px,54px 84px,66px 84px,30px 90px,42px 90px,60px 90px,72px 90px;
+  transform: rotate(0);
+}
+@supports (-moz-appearance: meterbar) {
+  .nes-octocat::before {
+    box-shadow: 24px 6px 0 0.020em,78px 6px 0 0.020em,24px 12px 0 0.020em,30px 12px 0 0.020em,72px 12px 0 0.020em,78px 12px 0 0.020em,24px 18px 0 0.020em,30px 18px 0 0.020em,36px 18px 0 0.020em,42px 18px 0 0.020em,48px 18px 0 0.020em,54px 18px 0 0.020em,60px 18px 0 0.020em,66px 18px 0 0.020em,72px 18px 0 0.020em,78px 18px 0 0.020em,18px 24px 0 0.020em,24px 24px 0 0.020em,30px 24px 0 0.020em,36px 24px 0 0.020em,42px 24px 0 0.020em,48px 24px 0 0.020em,54px 24px 0 0.020em,60px 24px 0 0.020em,66px 24px 0 0.020em,72px 24px 0 0.020em,78px 24px 0 0.020em,84px 24px 0 0.020em,18px 30px 0 0.020em,24px 30px 0 0.020em,30px 30px 0 0.020em,36px 30px 0 0.020em,42px 30px 0 0.020em,48px 30px 0 0.020em,54px 30px 0 0.020em,60px 30px 0 0.020em,66px 30px 0 0.020em,72px 30px 0 0.020em,78px 30px 0 0.020em,84px 30px 0 0.020em,18px 36px 0 0.020em,24px 36px 0 0.020em,30px 36px 0 0.020em,36px 36px 0 0.020em #ffdec4,42px 36px 0 0.020em #ffdec4,48px 36px 0 0.020em #ffdec4,54px 36px 0 0.020em #ffdec4,60px 36px 0 0.020em #ffdec4,66px 36px 0 0.020em #ffdec4,72px 36px 0 0.020em,78px 36px 0 0.020em,84px 36px 0 0.020em,18px 42px 0 0.020em,24px 42px 0 0.020em,30px 42px 0 0.020em #ffdec4,36px 42px 0 0.020em #cb7066,42px 42px 0 0.020em #ffdec4,48px 42px 0 0.020em #ffdec4,54px 42px 0 0.020em #ffdec4,60px 42px 0 0.020em #ffdec4,66px 42px 0 0.020em #cb7066,72px 42px 0 0.020em #ffdec4,78px 42px 0 0.020em,84px 42px 0 0.020em,18px 48px 0 0.020em,24px 48px 0 0.020em,30px 48px 0 0.020em #ffdec4,36px 48px 0 0.020em #cb7066,42px 48px 0 0.020em #ffdec4,48px 48px 0 0.020em #ffdec4,54px 48px 0 0.020em #ffdec4,60px 48px 0 0.020em #ffdec4,66px 48px 0 0.020em #cb7066,72px 48px 0 0.020em #ffdec4,78px 48px 0 0.020em,84px 48px 0 0.020em,24px 54px 0 0.020em,30px 54px 0 0.020em,36px 54px 0 0.020em #ffdec4,42px 54px 0 0.020em #ffdec4,48px 54px 0 0.020em #cb7066,54px 54px 0 0.020em #cb7066,60px 54px 0 0.020em #ffdec4,66px 54px 0 0.020em #ffdec4,72px 54px 0 0.020em,78px 54px 0 0.020em,6px 60px 0 0.020em,12px 60px 0 0.020em,42px 60px 0 0.020em,48px 60px 0 0.020em,54px 60px 0 0.020em,60px 60px 0 0.020em,18px 66px 0 0.020em,24px 66px 0 0.020em,36px 66px 0 0.020em,42px 66px 0 0.020em,48px 66px 0 0.020em,54px 66px 0 0.020em,60px 66px 0 0.020em,66px 66px 0 0.020em,24px 72px 0 0.020em,30px 72px 0 0.020em,36px 72px 0 0.020em,42px 72px 0 0.020em,48px 72px 0 0.020em,54px 72px 0 0.020em,60px 72px 0 0.020em,66px 72px 0 0.020em,36px 78px 0 0.020em,48px 78px 0 0.020em,54px 78px 0 0.020em,66px 78px 0 0.020em,36px 84px 0 0.020em,48px 84px 0 0.020em,54px 84px 0 0.020em,66px 84px 0 0.020em,30px 90px 0 0.020em,42px 90px 0 0.020em,60px 90px 0 0.020em,72px 90px 0 0.020em;
+  }
+}
+.nes-octocat.animate::before {
+  animation: wave 0.5s infinite steps(1);
+}
+@keyframes wave {
+  50% {
+    width: 6px;
+    height: 6px;
+    color: #333;
+    box-shadow: 24px 6px,78px 6px,24px 12px,30px 12px,72px 12px,78px 12px,24px 18px,30px 18px,36px 18px,42px 18px,48px 18px,54px 18px,60px 18px,66px 18px,72px 18px,78px 18px,18px 24px,24px 24px,30px 24px,36px 24px,42px 24px,48px 24px,54px 24px,60px 24px,66px 24px,72px 24px,78px 24px,84px 24px,18px 30px,24px 30px,30px 30px,36px 30px,42px 30px,48px 30px,54px 30px,60px 30px,66px 30px,72px 30px,78px 30px,84px 30px,18px 36px,24px 36px,30px 36px,36px 36px #ffdec4,42px 36px #ffdec4,48px 36px #ffdec4,54px 36px #ffdec4,60px 36px #ffdec4,66px 36px #ffdec4,72px 36px,78px 36px,84px 36px,18px 42px,24px 42px,30px 42px #ffdec4,36px 42px #ffdec4,42px 42px #ffdec4,48px 42px #ffdec4,54px 42px #ffdec4,60px 42px #ffdec4,66px 42px #ffdec4,72px 42px #ffdec4,78px 42px,84px 42px,12px 48px,18px 48px,24px 48px,30px 48px #ffdec4,36px 48px #cb7066,42px 48px #ffdec4,48px 48px #ffdec4,54px 48px #ffdec4,60px 48px #ffdec4,66px 48px #cb7066,72px 48px #ffdec4,78px 48px,84px 48px,12px 54px,24px 54px,30px 54px,36px 54px #ffdec4,42px 54px #ffdec4,48px 54px #cb7066,54px 54px #cb7066,60px 54px #ffdec4,66px 54px #ffdec4,72px 54px,78px 54px,18px 60px,42px 60px,48px 60px,54px 60px,60px 60px,24px 66px,36px 66px,42px 66px,48px 66px,54px 66px,60px 66px,66px 66px,24px 72px,30px 72px,36px 72px,42px 72px,48px 72px,54px 72px,60px 72px,66px 72px,36px 78px,48px 78px,54px 78px,66px 78px,36px 84px,48px 84px,54px 84px,66px 84px,30px 90px,42px 90px,60px 90px,72px 90px;
+    @supports (-moz-appearance: meterbar) {
+      .nes-octocat {
+        box-shadow: 24px 6px 0 0.020em,78px 6px 0 0.020em,24px 12px 0 0.020em,30px 12px 0 0.020em,72px 12px 0 0.020em,78px 12px 0 0.020em,24px 18px 0 0.020em,30px 18px 0 0.020em,36px 18px 0 0.020em,42px 18px 0 0.020em,48px 18px 0 0.020em,54px 18px 0 0.020em,60px 18px 0 0.020em,66px 18px 0 0.020em,72px 18px 0 0.020em,78px 18px 0 0.020em,18px 24px 0 0.020em,24px 24px 0 0.020em,30px 24px 0 0.020em,36px 24px 0 0.020em,42px 24px 0 0.020em,48px 24px 0 0.020em,54px 24px 0 0.020em,60px 24px 0 0.020em,66px 24px 0 0.020em,72px 24px 0 0.020em,78px 24px 0 0.020em,84px 24px 0 0.020em,18px 30px 0 0.020em,24px 30px 0 0.020em,30px 30px 0 0.020em,36px 30px 0 0.020em,42px 30px 0 0.020em,48px 30px 0 0.020em,54px 30px 0 0.020em,60px 30px 0 0.020em,66px 30px 0 0.020em,72px 30px 0 0.020em,78px 30px 0 0.020em,84px 30px 0 0.020em,18px 36px 0 0.020em,24px 36px 0 0.020em,30px 36px 0 0.020em,36px 36px 0 0.020em #ffdec4,42px 36px 0 0.020em #ffdec4,48px 36px 0 0.020em #ffdec4,54px 36px 0 0.020em #ffdec4,60px 36px 0 0.020em #ffdec4,66px 36px 0 0.020em #ffdec4,72px 36px 0 0.020em,78px 36px 0 0.020em,84px 36px 0 0.020em,18px 42px 0 0.020em,24px 42px 0 0.020em,30px 42px 0 0.020em #ffdec4,36px 42px 0 0.020em #ffdec4,42px 42px 0 0.020em #ffdec4,48px 42px 0 0.020em #ffdec4,54px 42px 0 0.020em #ffdec4,60px 42px 0 0.020em #ffdec4,66px 42px 0 0.020em #ffdec4,72px 42px 0 0.020em #ffdec4,78px 42px 0 0.020em,84px 42px 0 0.020em,12px 48px 0 0.020em,18px 48px 0 0.020em,24px 48px 0 0.020em,30px 48px 0 0.020em #ffdec4,36px 48px 0 0.020em #cb7066,42px 48px 0 0.020em #ffdec4,48px 48px 0 0.020em #ffdec4,54px 48px 0 0.020em #ffdec4,60px 48px 0 0.020em #ffdec4,66px 48px 0 0.020em #cb7066,72px 48px 0 0.020em #ffdec4,78px 48px 0 0.020em,84px 48px 0 0.020em,12px 54px 0 0.020em,24px 54px 0 0.020em,30px 54px 0 0.020em,36px 54px 0 0.020em #ffdec4,42px 54px 0 0.020em #ffdec4,48px 54px 0 0.020em #cb7066,54px 54px 0 0.020em #cb7066,60px 54px 0 0.020em #ffdec4,66px 54px 0 0.020em #ffdec4,72px 54px 0 0.020em,78px 54px 0 0.020em,18px 60px 0 0.020em,42px 60px 0 0.020em,48px 60px 0 0.020em,54px 60px 0 0.020em,60px 60px 0 0.020em,24px 66px 0 0.020em,36px 66px 0 0.020em,42px 66px 0 0.020em,48px 66px 0 0.020em,54px 66px 0 0.020em,60px 66px 0 0.020em,66px 66px 0 0.020em,24px 72px 0 0.020em,30px 72px 0 0.020em,36px 72px 0 0.020em,42px 72px 0 0.020em,48px 72px 0 0.020em,54px 72px 0 0.020em,60px 72px 0 0.020em,66px 72px 0 0.020em,36px 78px 0 0.020em,48px 78px 0 0.020em,54px 78px 0 0.020em,66px 78px 0 0.020em,36px 84px 0 0.020em,48px 84px 0 0.020em,54px 84px 0 0.020em,66px 84px 0 0.020em,30px 90px 0 0.020em,42px 90px 0 0.020em,60px 90px 0 0.020em,72px 90px 0 0.020em;
+      }
+    }
+  }
+}
+
+/*# sourceMappingURL=nes.css.map */
