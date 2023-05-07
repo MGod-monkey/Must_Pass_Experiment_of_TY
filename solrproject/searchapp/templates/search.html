@@ -6,11 +6,23 @@
 <head>
     <meta charset="utf-8">
     <title> 必过通原-搜题库 </title>
+    <!-- Add lightGallery CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css" />
+
+    <!-- Add required JavaScript libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js"></script>
+
+    <!-- Add required JavaScript libraries -->
+    <!-- <script
+    src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+    crossorigin="anonymous"></script> -->
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/x_icon.png' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/nes.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/mobile_style.css' %}" media="screen and (max-width: 450px)">
+    <link rel="shortcut icon" type="image/x-icon" href="https://mybog.s3.ladydaily.com/imgs/x_icon.png">
+    <link rel="stylesheet" type="text/css" href="https://mybog.s3.ladydaily.com/css/nes_min.css">
+    <link rel="stylesheet" type="text/css" href="https://mybog.s3.ladydaily.com/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://mybog.s3.ladydaily.com/css/mobile_style.css" media="screen and (max-width: 450px)">
 </head>
  
 <body class="main-content">
@@ -25,7 +37,7 @@
       <i class="nes-octocat animate"></i>
     </a>
     <div class="tip" style="margin:0 auto;width: 100%;">
-      <p class="nes-text is-success" style="text-align: center">本题库共收录<span class="nes-text is-error"> 270 </span>道原题</p>
+      <p class="nes-text is-success" style="text-align: center">本题库共收录<span class="nes-text is-error"> 300+ </span>道原题</p>
       <p class="nes-text is-success" style="text-align: center">搜索框支持题目/选项模糊搜索</p> 
     </div>
     <form method="GET" action="{% url 'search' %}">
@@ -36,7 +48,6 @@
           </button>
       </div>
     </form>
-
     <div class="nes-table-responsive" style="position: relative; margin-top: 0.5rem;">
       <table class="nes-table is-bordered is-dark" id="search-results", style="margin:0 auto;">
       <thead>
@@ -68,6 +79,15 @@
       </table>
     </div>
   </div>
+  {% if images %}
+    <div class="lightgallery" style="text-align: center;">
+        {% for image in images %}
+            <a href="{{ image }}" data-sub-html="<h4>实验报告图片</h4>">
+                <img src="{{ image }}" alt="实验报告图片" width="300" style="margin: 10px;">
+            </a>
+        {% endfor %}
+    </div>
+  {% endif %}
   <button type="button" id="scrollBtn" class="nes-btn is-error scroll-btn" style="-webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); transform: rotate(90deg);">
     <span>&lt;</span>
   </button>
@@ -145,6 +165,15 @@
         }
     }
   }
+  // 实验报告图片演示
+  $(document).ready(function() {
+      $(".lightgallery").lightGallery({
+          thumbnail: true,
+          animateThumb: false,
+          showThumbByDefault: false,
+          selector: 'a'
+      });
+  });
 </script>
 {% endverbatim %}
  
